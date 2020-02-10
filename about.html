@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>知书达理</title>
+<link rel="icon" type="image/x-icon" href="images/图标.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<link href="css/m.css" rel="stylesheet">
+<style>
+.gushi{
+ text-align:center;
+ font-size:20px;
+}
+</style>
+<script>
+window.onload = function ()
+{
+	var oH2 = document.getElementsByTagName("h2")[0];
+	var oUl = document.getElementsByTagName("ul")[0];
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="tophead">
+    <div class="logo"><a href="/">北极光。个人博客</a></div>
+    <div id="mnav">
+      <h2><span class="navicon"></span></h2>
+      <ul>
+        <li><a href="index.html">网站首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="list.html">学无止境</a></li>
+        <li><a href="info.html">慢生活</a></li>
+        <li><a href="gbook.html">留言</a></li>
+      </ul>
+    </div>
+    <nav class="topnav" id="topnav">
+      <ul>
+        <li><a href="index.html">网站首页</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="list.html">学无止境</a></li>
+        <li><a href="info.html">慢生活</a></li>
+        <li><a href="gbook.html">留言</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<article>
+  <h1 class="t_nav"><span>知书达理，温文尔雅，知性感性</span><a href="index.html" class="n1">网站首页</a><a href="about.html" class="n2">关于我</a></h1>
+  <div class="ab_box">
+    <div class="leftbox">
+      <div class="newsview">
+        <div class="news_infos">
+          <p>北极光，男，一个00后five大学生。<br />
+			<h3>大学之大，不在大楼之大，而在大师之大！</h3>
+            2018年考入中原工学院软件学院，第一次来到这个44亩地的小学院，我甚至想直接去退学选择复读。但是现在，我很热爱这个麻雀虽小，五脏俱全的学院。<br/>
+            <h3>读书是人类进步的阶梯！</h3>
+            热爱读书，但讨厌读励志书和大道理书。最喜欢王小波，喜欢他放荡不羁的灵魂。偶尔会写一点随笔，但是文笔不好，惹人生笑。<br />
+            <h3>一箫一剑平生意，负尽狂名十五年。</h3>
+            只要是我想做的事事情，无论如何，我一定要试一试，即使不能证明我可以，那也要证明我不可以！<br />
+           </p>
+          <br />
+          <h2>About my blog</h2></br></br>
+		  <div>
+		  <p class="gushi">我有一壶酒，</p><br />
+		  <p class="gushi">足以慰风尘。</p><br />
+		  <p class="gushi">尽倾江海里，</p><br />
+		  <p class="gushi">赠与天下人！</p>
+		  </div>
+        </div>
+      </div>
+    </div>
+    <div class="rightbox">
+      <div class="aboutme">
+        <h2 class="hometitle">关于我</h2>
+        <div class="avatar"> <img src="images/avatar.jpg"> </div>
+        <div class="ab_con">
+          <p>网名：北极光。</p>
+          <p>职业：学生 </p>
+          <p>个人微信：ywjsn552566</p>
+          <p>邮箱：1927448014@qq.com</p>
+        </div>
+      </div>
+      <div class="weixin">
+        <h2 class="hometitle">微信关注</h2>
+        <ul>
+          <img src="images/wx.jpg">
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+<footer>
+  <p>欢迎来到北极光。的个人博客</p>
+</footer>
+<script src="js/nav.js"></script>
+</body>
+</html>

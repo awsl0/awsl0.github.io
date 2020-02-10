@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+.ty-preferences .window-content { background-color: rgb(250, 250, 250); }
+.ty-preferences .nav-group-item.active { color: white; background: rgb(153, 153, 153); }
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p><span> 今天我们公正，结合历史真相，讲讲悲情帝王，崇祯。文字很多，不喜勿看，欢迎指正。</span>
+<span>以下所有言论，来自《明史》（清朝编撰的正版史书）《明实录》（明朝历朝编撰的原始史料）《国榷》（谈迁编撰的一本贬清颂明的史书，在清朝是禁书）《明季北略》（计六奇编撰的万历到崇祯年间的史料）。</span>
+<span>由我各人拆分整理，取出最可信的说法来还原这位悲情帝王，崇祯。</span>
+<span>首先讲两个故事，</span>
+<span>第一，崇祯十七年三月十九日，崇祯皇帝最信任的大太监王承恩对崇祯说“陛下，叛入京，速逃。”</span>
+<span>崇祯说“迎敌！大营军何在，李国珍何在？”</span>
+<span>王承恩“陛下，哪有什么李国珍，他早跑了。”</span>
+<span>崇祯听完和王承恩出宫登上了万岁山，也就是煤山，他本是要走，但低头俯瞰紫禁城，一片大火。说“诸臣皆可杀！”</span>
+<span>说罢就回宫内，回到宫内看见了他的皇后，周皇后，他对周皇后说。</span>
+<span>“大势去矣！尔为天下母，当死！”</span>
+<span>周皇后听罢说“你当皇帝十八年，未曾听我一言，如今要我陪葬你的江山社稷，也罢！我没有遗憾”</span>
+<span>崇祯被说的哑口无言，转头就走。</span>
+<span>转身召见三个儿子，对他们说“你们今后就是平民，听天由命吧”</span>
+<span>又回到后宫看到周皇后已经上吊自尽，说“好！”又看到一旁的女儿在不停啼哭，说“何生帝王家？”</span>
+<span>说罢，一剑挥向自己亲生女儿。</span>
+<span>转身又回到煤山，划破手指在衣裳上写道“然诸臣误朕！朕无颜面先祖，自去冠冕，以发覆面，任贼分裂朕尸，勿伤我百姓一人！”</span>
+<span>这段文字是我从《国榷》和《明史》中推敲而来，是最可信的。这段记载我为什么放到开篇来讲，因为当我看到的时候内心振奋，我无法想象当崇祯帝站在煤山上俯瞰紫禁城时他的内心是何等的悲伤，想当年少年天子，意气风发，平定阉党，独揽朝纲，勤政节俭，誓要中兴大明，到最后叛军兵临城下，他杀妻杀女。这岂是悲壮二字可说？</span>
+<span>第二个故事，</span>
+<span>这段故事是《明季北略》记载的，记载李自成入崇祯内廷，掠3700万锭白银，每锭500两，送回老家。</span>
+<span>这段记载说明了崇祯帝的冷血，在明末的时候，国库无钱，发不出军饷，导致士兵不愿意为大明王朝作战，没有军饷，导致无兵可招，向百姓征收辽饷，绞饷。导致民不聊生，而最后却在他的内廷之中翻出巨额财富，可见崇祯帝爱钱不爱江山。</span>
+<span>但我认为，这段记载不可信，因为我觉得不可能，3700万锭，每锭500两，什么概念，概念是崇祯内廷有180亿两白银，这是天文数字，清签订辛丑条约本息合计才赔9.8亿两。清乾隆年间国力空前强横，每年税收达8千万两，攒够180亿要200年不花不用。崇祯内廷怎么可能有180亿，就算他继承元朝江山，有这180亿。崇祯一生勤政节俭，明末一年税收300多万两白银，辽东战争，国内战争每年要花将近400万，这是入不敷出。他冒着民不聊生的危险，还要征收辽饷，绞饷来补充军费，若他内廷真有180亿，这几百万两那简直是九牛一毛，他又何必冒风险去强征，更何况李自成大军挺进黄河之时，京城迫在眉睫，崇祯无兵可用，哭着求大臣拿钱，筹集军饷，而且把自己内廷里所有的银器都换成白银用于军费。</span>
+<span>所以，即使我翻其他史书都没有找到证据反驳《明季北略》中这180亿的记载，我依旧不信崇祯可能有这180亿。他的内廷，不可能有钱，更不可能有这么多钱。</span>
+<span>如此崇祯，为什么就让大明这个延续了200多年的王朝覆灭了呢？</span>
+<span>的确时局不稳，明神宗30年不上朝，内导致朝中党政不断，外没有即时的制衡女真各部落，导致努尔哈赤崛起。明熹宗在位7年，宠信宦官魏忠贤，不问朝政。</span>
+<span>但大明到了崇祯之手，也不是必亡之国，崇祯不是亡国的罪魁祸手，明朝的败亡，皆仰仗上面两位。</span>
+<span>但崇祯的罪是没有作出正确的判断，让大明王朝断送，他亦有亡国之罪。</span>
+<span>第一罪，多疑好猜，杀袁崇焕。</span>
+<span>崇祯元年，少年天子剿灭阉党，杀魏忠贤，肃清朝纲，意气风发，一心要收复辽东。袁崇焕说“一把尚方剑，五年复辽东”。崇祯大喜过望。封袁崇焕总领辽东兵事。</span>
+<span>我们讲实话，在整个明末，对清作战取得大胜利和标志性胜利的战争，除了袁崇焕，没有第二个人，袁崇焕一到任，单骑入毛文龙大营，杀了拥兵自重的毛文龙。</span>
+<span>皇太极十万八旗铁骑杀到北京城下，崇祯勒令各地总兵勤王，各地总兵不敢对抗清军，袁崇焕率八千关宁铁骑在北京城下大破十万八旗军，一日追出50里。</span>
+<span>但最后却被崇祯以通敌议和之罪凌迟处死。崇祯中了皇太极的反间之计，皇太极让被俘虏的太监故意听到他和手下的对话，从而让崇祯误解袁崇焕。</span>
+<span>从此以后，辽东战事在无可用之人，对清作战频频失利，皇太极更是多次入关劫掠。此为崇祯之罪。</span>
+<span>再讲一个有意思的事，崇祯“雪夜披衣”。</span>
+<span>帝王把自己的衣服给臣子披上，这是莫大的礼节，在明末，共有两个皇帝做过这件事，第一个就是崇祯皇帝给袁崇焕披衣。第二个就是皇太极给洪承畴披衣。前者是崇祯想稳住袁崇焕，让城外的关宁铁骑不哗变，结果杀了袁崇焕。后者是皇太极想招揽洪承畴，结果招降了洪承畴。</span>
+<span>两者对比，高下立断！</span>
+<span>第二罪，反复无常，不敢承担</span>
+<span>如果说崇祯的多疑是帝王的通病，那他的反复无常，不敢承担一定是他个人的问题，我讲几个事。</span>
+<span>1，张献忠派兵打下了凤阳，挖了崇祯的祖坟，崇祯帝听罢痛哭流涕，祭拜太庙三天。说“贼不知天子之怒！”誓要将他扒皮抽筋。但后来杨嗣昌制定十面张网计划，将李自成打的全军覆没，张献忠欲投降朝廷，杨嗣昌对崇祯说“张献忠反复无常，必会在反，况且他现在残兵败将，必须一网打尽”。崇祯听后说“他如此有诚意，朕怎么能寒了他的心？”</span>
+<span>从此就看得出崇祯反复无常的态度。</span>
+<span>2，崇祯十三年春节，辽东战事愈发紧张，朝廷已经没有钱在支持辽东战役了，此时皇太极派人要与明议和，其实这不是第一次了，早在崇祯元年时，皇太极就要与明议和，议和条件很简单，承认清是国家。那时候崇祯意气风发，当然不会同意。而如今，明清双方明显清占上峰。时任兵部尚书的陈新甲劝崇祯同意和谈，崇祯说“尔自行决断”。意思就是同意，于是秘密进行和谈，可突然有一天事情被大臣知道了，大臣们上书弹劾陈新甲，说他通敌叛国。陈新甲说自己是凭圣旨办事，何来叛国？崇祯当时脸色一红，直接把陈新甲拍入诏狱，后秘密处死，由此不难看出，崇祯是个不敢负责的皇帝。</span>
+<span>3，崇祯十六年，李自成大军横扫山西，欲渡黄河攻北京城，崇祯当时想要南迁，把京城迁到南京，派一个六品言官上书提议南迁，可没想到群臣没有一个复议的，因为这责任太大了，而崇祯也不好意思自己说南迁，因为明十二帝的皇陵都在北京，他也不想负这个责任。没有南迁直接导致送给了李自成和后来的清军一个完美的政治体系和高级官员，也让后来的南明政权党争不断，因为没有太子，所以南明为了皇权又开始党争。</span>
+<span>第三罪，错误指挥</span>
+<span>1，崇祯十三年，松锦之战爆发，崇祯派大将洪承畴率领明朝当时最后一支精锐部队前往，解救锦州，如果锦州失守，不仅关宁锦防线被破，而且明朝也将永远无法夺回辽东。洪承畴一到锦州，看破了皇太极围点打援的计谋，所以在城外与城内的祖大寿成合围之势，围困清军，明朝部队善于守城，而在旷野，皇太极的八旗铁骑几乎无人何挡。僵持了一年后，崇祯坐不住了，一是他怕洪承畴拥兵自重，二是他不想再在辽东投入军饷，因为国内的仗还要打，所以他下令“刻期进兵，不进者死”的命令，洪承畴没办法， 只得遵命，而后被八旗军杀的大败。至此，锦州失守，明朝精锐损失殆尽，洪承畴被俘投降，大明王朝也永远失去了夺回辽东的本钱。</span>
+<span>2，崇祯十六年，李自成叛军水淹开封，准备入陕西称帝，崇祯派孙传庭迎战，孙传庭看出李自成势不可挡，当时李自成号称带甲百万，所以孙传庭准备据守潼关，因为当时的明朝输不起了，孙传庭所带的人马，是当时整个明朝能拿出的所有家当，10万人，左良玉20万拥兵自重，朝廷掉遣不了，吴三桂20万守卫边疆。只有孙传庭这十万人能打仗，所以孙传庭据潼关之险，阻叛军。而崇祯又猜忌孙传庭，怕孙传庭拥兵自重，所以又催促孙传庭出战，结果被李自成击败，孙传庭战死沙场，孙传庭曾经大破高迎祥，亲手把高迎祥抓住，也曾经把李自成打的全军覆没，可最后马革裹尸，死在叛军之手。此系崇祯之过，但崇祯不敢负责，把所有的责任都扔到孙传庭身上，这样一位战功赫赫的将军，战死沙场的将军，死了没有任何谥号，子孙没有福荫。</span>
+<span>崇祯一生勤政，春节之时也不给自己放假，他心心念念要中兴大明，但自身能力有限，上面三罪五事，件件都可避免大明覆灭，而崇祯却都作出错误的判断。</span>
+<span>实际有明一代少有明君，有宠信宦官，被宦官鼓动御驾亲征最后被俘虏的明英宗，有只爱万贵妃不问朝政的明宪宗，有自己封自己大将军，建豹房，遍地搜刮处女的明武宗，有一心求仙问道，痴迷炼丹，差点死在宫女手上的明世宗，有刚登基一个月吃错药死的明光宗，有三十年不上朝的明神宗，有信任魏忠贤整天做木匠的明熹宗，有一生勤政，却猜忌心过重，导致亡国的明思宗。</span>
+<span>我认为崇祯不是亡国之君，他的爷爷，兄长是真正的亡国之君，但他却逃不过这亡国之罪，空有一身热血，却无一身本领。</span>
+<span>若他是刘邦，颇有用人之道，明不能亡，若他是韩信，颇有用兵之道，明不能亡，若他是赵构，颇有盘旋之道，明不能亡。可他是崇祯，无刘邦用人之智，无韩信带兵之能，无赵构坦荡之勇（赵构的合议让南宋在金国的高压下坚持百年之久，保护了江南不受战火之扰，若没有蒙古，南宋复国只是时间的问题）</span></p><p><span>先帝宵衣久，忧勤为万方。</span>
+<span>捐躯酬赤子，披发见高皇。</span>
+<span>风雨迷神路，山河尽国殇。</span>
+<span>御袍留血诏，哀痛何能忘？</span></p></div>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+.ty-preferences .window-content { background-color: rgb(250, 250, 250); }
+.ty-preferences .nav-group-item.active { color: white; background: rgb(153, 153, 153); }
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p><span> 1，世界上，最廉价的东西，就是男人一事无成的温柔。</span>
+<span>2，你背单词时 阿拉斯加的鳕鱼正跃出水面 你算数学时 太平洋彼岸的海鸥振翅掠过城市上空 你晚自习时 极图中的夜空散漫了五彩斑斓 但是少年你别着急 在你为自己未来踏踏实实地努力时 那些你感觉从来不会看到的景色 那些你觉得终身不会遇到的人 正一步步向你走来。</span>
+<span>3，如果所有人都理解你，那你得普通成什么样。</span>
+<span>4,我喜欢你有三分</span>
+<span>我所说的三分</span>
+<span>不是“三分流水七分尘”的三分</span>
+<span>而是“天下月色只有三分”的三分。</span>
+<span>5，带我走，拉我起来！</span>
+<span>6,错过了就是错过了，不是错了，而是过了。</span>
+<span>7,</span>
+<span>年轻时 你做了一个决定</span>
+<span>要把自己的生命献给爱情</span>
+<span>后来你没死</span>
+<span>年轻替你抵了命</span></p><p><span> 8撇、横、竖钩、提、卧钩、撇、点、撇、点、点、撇、点、横钩、横、撇、横撇、奈、撇、竖、撇、横钩、竖钩 撇、点!</span>
+<span>9，我想出一场车祸</span>
+<span>头重重的磕在地上 一摊鲜红 </span>
+<span>路人打着120 医院亮着红色的手术灯</span>
+<span>父母慌忙赶来 经过几个小时 </span>
+<span>医生走出来 拿着病危通知书 </span>
+<span>遗憾的说一声</span>
+<span>抢救无效</span>
+<span>10我有一句话，主语是我，宾语是你</span>
+<span>吉下两点一口，又有欠字相依</span>
+<span>11无心风月，独钟你。</span>
+<span>12“我之前没有爱过别人，你是第一个，我怕我做得不好，让你觉得爱情不过如此。”</span>
+<span>13我 :我总觉得你在敷衍</span>
+<span>他 :我可跟你说吧女人，我也就敷衍你，其他人我还懒得敷衍。</span>
+<span>14我是个肤浅的女生，可以一眼喜欢上谁，可是不容易放弃，喜欢这个词我认为很美，因为喜欢你让我得到了欢喜，我对感情很认真，喜欢那个人我就会把他当儿子宠，想给他最好的，看到他就忍不住笑，也希望自己是最完美的，我是个很特别的人，保守又主动，关于爱情，我希望从头到尾，爱情不是快餐</span>
+<span>15就像一只谨慎的兔子一样壮着胆子喜欢你</span>
+<span>你只是一个不耐烦的表情</span>
+<span>我就红着眼睛想逃回森林 </span></p><p><span> 16当我心无牵挂的时候，贫穷对我来说只是晚上吃馒头和吃牛排的区别，无损我的快乐，可当我爱上一个人的时候，我才深深感受到贫穷所带来的自卑。</span>
+<span>17他真的很好。是我一世的太阳。却不止照亮我了我。</span>
+<span>18,没有备注也能找到的人 一定对你很重要吧</span>
+<span>19,没有努力过的人</span>
+<span>没有资格去鄙视那些正在努力的人</span>
+<span>你不能因为自己变成了一个不痛不痒的人</span>
+<span>就去嘲笑那些爱恨分明的人。</span>
+<span>20,如果能被爱着，又怎会渴望孤独，盼望着黑夜，畏惧着白昼。</span>
+<span>21,突然很喜欢惊鸿一瞥这个词，一见钟情太敷衍，日久生情太苍白，别人眉来眼去，我只偷看你一眼!</span>
+<span>22,一起等初雪到来，一起为糟糕的天气无精打采。生活里这些本来没有太多意义的时刻，因为这样的陪伴而闪耀起来。新的一年，会有始料不及的运气，会有突如其来的欢喜。</span>
+<span>23，待人友善是修养，独来独往是性格。</span>
+<span>24私心期盼你的情有独钟，皮囊下却没能与众不同。</span>
+<span>25，男人喜欢漂亮的脸蛋，女人喜欢好听的情话，所以女人化妆，男人说谎</span>
+<span>26自己满身灰暗还总想着给别人一些光。</span>
+<span>27我告诉你我喜欢你，并不是一定要和你在一起，只是希望今后的你，在遭遇人生低谷的时候，不要灰心，至少曾经有人被你的魅力所吸引，曾经是，以后也会是。</span>
+<span>28即使没有人鼓掌也要优雅的谢幕 </span></p><p><span>  29,你要忍，忍到春暖花开； </span>
+<span>你要走，走到灯火通明； </span>
+<span>你要看过世界辽阔，再评判是好是坏； </span>
+<span>你要铆足劲变好，再站在不敢想象的人身边，旗鼓相当；</span>
+<span>你要变成想象中的样子，这件事，一步都不能让。</span>
+<span>30,我倾家荡产才买了把剑，打算喝碗酒就上路。碰巧你在领桌笑，从此心中无江湖。</span>
+<span>31,“我和你是什么关系呢?”</span>
+<span>就像是</span>
+<span>上海的南京路和南京的上海路</span>
+<span>听起来相似又亲密 实际上 毫无关系 </span></p><p><span>32任何以赚钱为目的的出发，都是对自我价值的贬低</span>
+<span>33，“今晚月色真美！（我喜欢你）” “风也温柔！（我也喜欢你）”</span>
+<span>34“你怎么发现自己爱上了她呢？”</span>
+<span>“她在笑，我觉得我也应该笑。”</span>
+<span>35，“ 十几岁的时候，我遇见了一个清风明月般的人。我什么都没想，我只想爱他。”</span>
+<span>36,光是你的名字，都够我爱一世了~王小波致李银河</span>
+<span>37,我的酒量大概就是：</span>
+<span>八瓶香槟 七瓶伏特加 六瓶野格 五瓶威士忌</span>
+<span>四瓶杰克丹尼 三瓶朗姆 两瓶生命之水</span>
+<span>或者 你的一声：宝贝</span>
+<span>38,我需要时间成长，她在等我娶她!</span>
+<span>39,目光短浅，眼里都是你，目光长远，想的也是你。</span>
+<span>40,你是我明目张胆的偏袒.是我众所周知的私心</span>
+<span>41,你说了那么多遍努力最后还不是捧起了手机，喊了那么多遍好好学习不还是败给了懒。你什么时候能够脚踏实地想想自己究竟要什么而不是凭着三分钟热度去喊“梦想”。</span>
+<span>42,“你到底是受了多少委屈才会如此温柔。”</span>
+<span>43,人在低谷时 不要打扰任何人</span>
+<span>做一个沉默不语的哑巴</span>
+<span>熬过了这段时间</span>
+<span>谁给的糖都不要了 </span>
+<span>44,很多崩溃其都是悄无声息的</span>
+<span>你坐在那里一动不动</span>
+<span>内心世界却早已崩塌粉碎</span>
+<span>一地狼藉 遍地灰烬</span>
+<span>45.,“你看，这个孩子好懂事啊。”</span>
+<span>“你怎么知道她是不是害怕、沉默、妥协呢？”</span>
+<span>46,村上春树说：“如果我爱你，而你也正巧爱我，你头发乱了的时候，我会笑笑地替你拨一拨，然后，手还留恋地在你发上多待几秒。但是，如果我爱你，而你不巧地不爱我，你头发乱了，我只会轻轻地告诉你，你头发乱了喔。”</span>
+<span>47,如果可以</span>
+<span>我只要</span>
+<span>一杯清水</span>
+<span>一片面包</span>
+<span>一枝花</span>
+<span>如果再奢侈些</span>
+<span>我希望</span>
+<span>水是你倒的</span>
+<span>面包是你切的</span>
+<span>花是你送的!</span>
+<span>48,待我回家</span>
+<span>带我回家</span>
+<span>代我回家</span>
+<span>49看过这么一句话：</span>
+<span>“如果你越来越冷漠，你以为你成长了，但其实没有。长大应该是变温柔，对全世界都温柔”</span>
+<span>我也在努力的变温柔变沉稳呀，就是为了配得上未来要与我共度一生的那个她呀！</span>
+<span>50,正所谓“一枪打出头鸟”。可在罗永浩看来，有的鸟来到世间，是为了做它该做的事，而不是专门躲枪子儿的。</span>
+<span>51,理想主义者最大的弊端，是喜欢用情怀认识世界，用感性指导理性。</span>
+<span>52,失败与成功，前者必然，后者偶然。除此之外，两者都不过只是一种过程。</span>
+<span>53,我天生不合群，</span></p><p><span>一向话少，时而冷场。</span></p><p><span>有过被孤立，有过被诟病。</span></p><p><span>有过自我质疑，也有到过崩坏的边缘。</span></p><p><span>合也无味，孤也无味。</span></p><p><span>党同乏味，这是人性。</span></p><p><span>最终决意做个哑巴。</span></p><p><span>少戾气，不言语，从心过活。</span></p><p><span>亚里士多德说“离群索居者不是野兽就是神灵”我既然做不上神灵做个野兽也好。</span>
+<span>54,生命并没有什么意义，</span></p><p><span>但是活着的话就可能会遇见有意思的事，</span></p><p><span>就像你遇见了那朵花，就像我遇见了你。</span>
+<span>55,“好想变成雪啊，这样就可以落在先生的肩上了……”</span></p><p><span>“若是先生撑了伞呢？”</span></p><p><span>“那就落在先生的红伞上，静载一路的月光。”</span></p><p><span>“若是先生将雪拂去……”</span></p><p><span>“那就任他拂去，能在他的手掌上停留一刻，便足矣。”</span></p><p><span>“野风，你还想变成雪吗？”</span></p><p><span>“一点都不想。以后我会用自己的双脚去我想去的地方，然后遇到某个人，爱上他和被深深爱着，过得比谁都幸福。”</span>
+<span>56,两姓联姻，一堂缔约，良缘永结，匹配同称。看此日桃花灼灼，宜是宜家。卜他年瓜瓞绵绵，尔昌尔炽。谨以白头之约，书向鸿筏。好将红叶之盟，载明鸳谱。此证。</span>
+<span>57,你是生活扑面而来的善意。</span>
+<span>58,一见如故 眉目成书</span>
+<span>59,我的冷漠里</span>
+<span>藏着一半害羞</span>
+<span>一半自卑。</span>
+<span>60后来许多人问我一个人夜晚踟蹰路上的心情，我想起的却不是孤单和路长，而是波澜壮阔的海和天空中闪耀的星光。</span>
+<span>61,姑娘，愿你有高跟鞋也有跑鞋，喝茶也喝酒。愿你有勇敢的朋友，有牛逼的对手。</span>
+<span>愿你，对以往的一切情深义重，但从不回头。愿你特别美丽，特别平静，特别凶狠，也特别温柔。</span>
+<span>62,一直以来，我都在寻找那个对的人，从前我以为，对的人就是那个爱而不得的人，后来我才发现，对的人是我给你的爱能得到对等的回应的人，我给你说天冷添衣，你告诉我盖好被子，任何的爱而不得或得而不爱都不是对的人。</span>
+<span>63,“我天性不宜交际。在多数场合，我不是觉得对方乏味，就是害怕对方觉得我乏味。可是我既不愿意忍受对方乏味，也不愿意费劲使自己显得有趣，那都太累了。我独处时最轻松，因为我不会觉得自己乏味，即使乏味，也自己承受，不累及他人。”</span>
+<span>64,人在得不到的时候，什么都可以不介意；得到之后，却什么都有点介意。</span>
+<span>65,一个女人最可悲的就是把婚姻当作为自己提供吃穿的补给站。</span>
+<span>66,从来不偷东西的你</span></p><p><span>却爱偷笑，于是从来不偷东西的我</span></p><p><span>便学会了偷看</span></p><p><span>——《偷》</span>
+<span>67,我去旅行，是因为我决定了要去，并不是因为对风景的兴趣。</span>
+<span>——加西亚•马尔克斯</span>
+<span>68,某天，你无端想起一个人，她曾让你对明天有所期许，但是却完全没有出现在你的明天里。——《再见金华站》</span>
+<span>69, 能够让你后悔的，从来不是你做过的事，而是你想做却没有去做的事。</span>
+<span>70,我所有的自负都来自我的自卑，所有的英雄气概都来自于我内心的软弱，所有的振振有词都因为心中满是怀疑。我假装无情，其实是痛恨自己的深情。我以为生命的意义在于四处游荡流亡，其实只是掩饰至今没有愿意驻足的地方。</span>
+<span>71,我永远喜欢你，不是指我十年二十年一辈子都喜欢你，而是指，我这一刻喜欢你的程度，让我有勇气说出来我永远喜欢你。</span>
+<span>72,同样的错误你根本不会犯第二次，如果有，第二次不是错误，而是你的选择。</span>
+<span>73,眼界狭隘不可怕，见识短浅也无所谓，资源匮乏也只是暂时的，但最可怕的是因为自卑，和从未尝试改变现状，进而摧毁你自己的一生。</span>
+<span>74,我一直很花心，每一秒的你，我都爱。</span>
+<span>75,#刘瑜·送你一颗子弹#我其实并不孤僻，甚至可以说开朗活泼。但大多时候我很懒，懒得经营一个关系。还有一些时候，就是爱自由，觉得任何一种关系都会束缚自己。当然最主要的，还是知音难觅。 我老觉得自己跟大多数人交往，总是只能拿出自己的一个维度，很难找到一个像我一样兴趣一望无际的人。</span>
+<span>76,东野圭吾比喻明知不可能的爱：像故意去按发炎的智齿，疼痛中获得莫名的快感。</span>
+<span>77,一些人说喜欢你，也许只是喜欢上了他们所构想的你。而真正的喜欢，是能够接受每个阶段改变中的你，因为那才是真实的你。而配得上这种喜欢的，真的不多。</span>
+<span>78,要不然你来当一天女孩，亲身感觉我为什么这么敏感，了解每一滴泪的来龙去脉，爱我所爱，懂我悲哀</span>
+<span>79,孤独这两个字拆开来看，有孩童，有瓜果，有走兽，有飞虫，足以撑起一个盛夏傍晚的巷口，人情味十足。稚儿擎瓜柳棚下，细犬逐蝶窄巷中。人间繁华多笑语，惟我空余两鬓风。孩童走兽飞虫自然热闹，可那都和你无关，这就叫孤独。</span>
+<span>80,​从我遇见你的那天起，我所做的每一件事，都是为了靠近你。</span>
+<span>81,我们的能力，只能够伤害那些离我们最近的人。</span>
+<span>82,所谓父母，就是那不断对着背影既欣喜又悲伤，想追回拥抱又不敢声张的人。</span>
+<span>83,“你见过的情商最低的行为是怎样的？”在别人面前装的很努力的样子，满脸写满奋斗，私下里懒得像头猪。</span>
+<span>84,不具有“敏感”这种东西的人，总会深深刺痛别人而不自知。</span>
+<span>85,你十五岁，梦想是做一个科学家。你会自己骑自行车上学，偶尔坐公车，上来一个穿校服的，会多看两眼，而那些臃肿的大叔和提着菜肉的大妈，都是隐形人，下车时被蹭到了，你才终于注意到这么一个人，衣服上有股尘土味儿，你心里想，我长大了不会活成那样子。</span>
+<span>大叔走出去好远，回头看了你一眼，心里有些波动，想起了十五岁的自己。</span>
+<span>86,前三分之一的人生就这样了啊。</span>
+<span>87,“良心是我心里一个三角形的东西。我没有做坏事，它便静静不动；如果我干了坏事，它便转动起来，每个角都把我刺痛；如果我一直干坏事，每一个角都磨平了，也就不觉得痛了。”</span>
+<span>88,人和人之间舒服的关系，是可以一直不说话，也可以随时说话。</span>
+<span>89,如果有一天，你想起了一个人，以及和他在一起吃的食物。那个时候，你就知道，孤独的味道尝起来是如何的。</span>
+<span>90,我说不出来为什么爱你，但我知道，你就是我不爱别人的理由。</span>
+<span>91,一旦别人问起自己想要什么，那一刹那反倒什么都不想要了。</span>
+<span>92,如果人类有尾巴的话</span>
+<span>说起来有点不好意思</span>
+<span>只要和你在一起，一定会止不住摇起来</span>
+<span>93,.&quot;这世上肯定有某个角落，存在着能完全领会我想表达的意思的人。&quot;——村上春树 </span>
+<span>94,.长大了，总有那么一两次，你会为重视的人奔跑，因为是对的人，走路真的来不及。”</span>
+<span>95,转过弯就是悬崖。掉进海里前的最后一秒想干什么?</span></p><p><span>打电话给你，听你说“喂”</span></p><p><span>然后你就能听见鱼的声音， 海藻的声音。</span></p><p><span>――《我爱你》</span>
+<span>96, 记住了，喜欢的东西就不要问别人好看不好看，喜欢胜过所有道理，原则抵不过我乐意</span>
+<span>97,凌晨四点钟，看见海棠花未眠。总觉得这时，你应该在我身边。</span>
+<span>98,春水初生,春林初盛,春风十里,不如你。秋池渐涨,秋叶渐黄,秋思一半,赋予卿。</span>
+<span>99,记忆会自动屏蔽过去的苦难，今天的苦难算个屁啊！</span>
+<span>100,人类的悲欢并不相通，我只觉得他们吵闹。</span>
+<span>——鲁迅《小杂感》</span>
+<span>101,但凡死缠烂打的人，大都不是真的深爱你，那只是在跟自己赛跑。真正爱你的人，做不到死缠烂打。因为自尊不允许。我们一直深信，爱就是把最好的一切给予对方，包括尊严。多少浅浅淡淡的转身，是旁人看不懂的情深。</span>
+<span>102,爱一个人，不是按图索骥，最好的方式是去努力地认识对方、认识自己、互相适应。人生是不断地发现“原来我喜欢的人可以是这个样子呀”的过程。</span>
+<span>103祝你今天愉快，你明天的愉快留着我明天再祝。</span>
+<span>104,我这个人就是这样 你给我一巴掌 那么我就会还你一巴掌 你给我一拳 那么我就会还你一拳 你给我一刀 那么老哥 我死了</span>
+<span>105,十分钟输了20多万 点根烟双手在发抖 瘫痪在沙发上 感觉天都快塌下来 染上赌瘾的我对不起父母的养育之恩 我对不起学校从小对我的教育 我有罪 默默卸载了欢乐斗地主</span>
+<span>106,如果我一夜暴富，那么我一定没睡醒</span>
+<span>107,我喜欢世界陷入短暂的狂欢，也喜欢突然充满爱意的周围</span>
+<span>108,月亮被揉成一嘬星星融化在你眼睛里，这是一份来自四季的想念</span>
+<span>109,晚霞一跃，成为脸上稍不注意就褪去的粉红</span>
+<span>110,一个人的死，对于这个世界来说不过是多了一座坟墓，但对于相依为命的人来说，却是整个世界都被坟墓掩埋。</span>
+<span>111,我不看月亮，也不说想你，这样月亮和你都蒙在鼓里</span>
+<span>112，从童年起，我便独自一人，照顾着历代的星辰。——《孤独》你的善良，</span>
+<span>113,必须有点儿锋芒，</span>
+<span>否则等于零。</span>
+<span>不能总是做好人，</span>
+<span>好人做多了，</span>
+<span>就会让人觉得是理所应当。</span>
+<span>114,我不愿意暴露我的灵魂让那些好奇的凡夫俗子瞧个没完。——奥斯卡·王尔德</span>
+<span>115,所谓无底深渊，下去，也是前程万里。——木心</span>
+<span>116,我说她长得好看，又不是说我喜欢天底下所有漂亮的女子。只是说，见到她的那一面，忽然就觉得自己不对劲了，可是仔细想想，我不明白她的过去，不知道她的性格，甚至连她喜欢什么讨厌什么都不知道，想来想去，其实也就那一眼的心动，也就是因为······她长得好看”。 --《少年歌行》</span>
+<span>117,若逢新雪初霁， 满月当空， 下面平铺着皓影， 上面流转着亮银， 而你带笑地向我走来。 月色和雪色之间， 你是第三种绝色。</span>
+<span>118,我始终相信一切高贵的情感都羞于表白，一切深刻的体验都会拙于言辞。</span>
+<span>119,我所认为的“可爱”不仅是讨喜的长相而是你拥有我想要去保护的个性 是大千世界里的珍稀物种 是限量的晚霞和海风</span>
+<span>120,以后人人皆是读书人，一年读过的书，可能就要比当今儒圣翻过一辈子的书都要多，但很可惜，以后的读书人不算真正的读书人了，只算翻书人，所读之书，也非圣贤书了，更不会见贤思齐，所谓的将心比心，变了味道，很多人自己不愿做英雄，便认为世上无英雄，将别人的抛头颅洒热血视为傻瓜，将先烈的慷慨赴死转瞬忘却……那个看似活着很有意思的世道，其实丧失了许多先贤在世时无比希望后世能够继承的东西。</span>
+<span>121,“他本来浑身是光。有那么一瞬间，突然就黯淡了，成为宇宙里一颗尘埃。我努力回想起他全身是光的样子，却怎么也想不起来。后来发现，那是第一次见到他时，我眼里的光。     --突然不喜欢一个人</span>
+<span>122,“每个冬天的句点都是春暖花开。”</span>
+<span>123,.他只是故意装得懒散，其实内心和刺猬一般细致，性喜孤独，优雅得无以复加。</span>
+<span>124,.如果他当真要死，无非是因为这个世界不配他的脚再在上面踩踏。 </span>
+<span>125,我只喜欢一类人，他们生活狂放不羁，说起话来热情洋溢，对生活十分苛刻，希望拥有一切，他们对平凡的事不屑一顾，但他们渴望燃烧，像神话中巨型的黄色罗马蜡烛那样燃烧，渴望爆炸，像行星抨击那样在爆炸声中发出蓝色的光，令人惊叹不以。</span>
+<span>126,我想成为一个温柔的人，因为曾被温柔的人那样对待，深深了解那种被温柔相待的感觉。</span>
+<span>127,你是在拜佛，还是在拜自己的欲望？</span>
+<span>128,正义的反面不是邪恶，而是别的正义。</span>
+<span>129,偶尔觉得妈妈很丢人，妈妈为什么连起码的脸面和自尊心都没有呢？我都觉得上火。比起她自己，她有更想守护的，那就是我，但当时我并不知道。人真正变强大，不是因为守护着自尊心，而是抛开自尊心的时候，所以妈妈很强大。听说神无法无处不在，所以创造了妈妈。即使到了妈妈的年龄，妈妈的妈妈仍然是妈妈的守护神。妈妈这个词，只是叫一叫，也觉得喉间哽咽。妈妈，最有力量的名字。好不容易到了安慰妈妈的年纪的时候，已经过分懂事以后，以致于谢谢你，我爱你这些话常挂在嘴边，现在想要妈妈开心的话，只需要说，我现在需要妈妈…只要这么一句话就足够了。</span>
+<span>130,火车上的小情侣。两个都长得不好看。她拉着他，笑吟吟的，撒娇，撩拨他。而他，两眼无神，因在大庭广众之下被一个他并不引以为傲的女人爱着而感到尴尬。</span>
+<span>——《加缪手记》</span>
+<span>131,你讨厌母亲的市侩圆滑 </span>
+<span>却不知道她也曾跟你一样憧憬过未来</span>
+<span>132,可惜我相貌平平一事无成，惊艳不了谁的岁月，也就孤孤单单晃晃荡荡了小半生。</span>
+<span>可是你知书达礼，温柔有趣，未必一眼万年，却最是细水长流的妙人儿。</span>
+<span>133,＂如果你不相信自己，就相信相信着你的我吧。＂</span>
+<span>134,其实选择和谁在一起，就像是去海滩捡贝壳，我知道这广阔海边一定会有更美更好看的那一颗。但人的一生如此短暂，我已经捡到了属于我的那枚独一无二的。那么剩下的，就留给其他人吧。”</span>
+<span>135,愿你贪吃不胖，愿你深情不负，愿你傻人傻福，愿你一直幸运。愿你一生努力，一生被爱，想要的都拥有，得不到的都释怀。</span>
+<span>生日快乐，少女。!</span>
+<span>136,我说她长得好看，又不是说我喜欢天底下所有漂亮的女子。只是说，见到她的那一面，忽然就觉得自己不对劲了，可是仔细想想，我不明白她的过去，不知道她的性格，甚至连她喜欢什么讨厌什么都不知道，想来想去，其实也就那一眼的心动，也就是因为······她长得好看”。</span>
+<span>137,夏天有着迟暮的霞光 正如晚来的你皆是笑意</span>
+<span>138,</span>
+<span>她可爱到我想将黄昏夕照流出的一片金沙捧给她看，告诉她，你眼睛里的光比这个还漂亮喔。</span>
+<span>可爱到我想将傍晚时天空飘着的一朵粉色浓云当做玫瑰花送给她，告诉她，这是天上的仙女才能收到的礼物。</span>
+<span>可爱到我写那封告白的信的时候揉皱了半本稿纸，也措不好辞来形容我的心动，连我的字遇到她都像废物一样暗戳戳地脸红起来。</span>
+<span>可爱到和她牵手散步的时候连藏匿在树叶里的鸟叫虫鸣和工人修剪草坪的机器声配合起来都像特意为我们演奏的一首潮湿而清香的歌。</span>
+<span>可爱到我第一次吻她的时候默默思考了好久，我尝到的甜味是糖染在她嘴巴上的还是从我心里开始往外流一直满溢到唇齿的。</span>
+<span>可爱到我在想她的时候无意识地使劲揉我的猫的脑袋，嘴角弯弯地翘着，我家一向清高自傲的猫竟呆愣愣地看着我，心里肯定觉得我变态来着吧。</span>
+<span>139, 叶孤城道：“拔你的剑。”</span>
+<span>　　皇帝道：“我手中无剑。”</span>
+<span>　　叶孤城道：“你不敢应战？”</span>
+<span>　　皇帝微笑道：“我练的是天子之剑，平天下，安万民，运筹于帷幄之中，决胜于千</span>
+<span>里之外，以身当剑，血溅五步，是为天子所不取。”</span>
+<span>140,如果本身不自信却渴望别人高看自己，就会变得做作；如果总想求得别人注意力但又没有真正吸引人的地方，就会想要侵略；如果本身存在感低、自己也认为自己存在感低，就总想要逾越；如果内心空荡，对别人的需求占据了思想高位，就会不断讨好。</span>
+<span>141,昨天天气特别好，整条道上都是落叶，我从来不注重这些的，但是一想到这是我最后一次度过这里的秋季，不喜欢的秋天也变得可爱起来。这是我的习惯，我要把最好的留在回忆里，就像你一样，前段时间的夜晚特别难熬，我辗转反侧、奉劝自己不要对你特别的上心，但是心脏磨得疼，以至于我喜欢到特别讨厌你。今天不一样，风刮得冷，我裹紧衣服，尽管我仍然记得你无意间对我的微笑，可现在我只关心能不能买到我最喜欢吃的早点。</span>
+<span>142,初雪那天我像未曾见过世面的小鹿一样，眼里藏了满世界的惊奇，我没有忍心跑到雪地上蹦蹦跳跳，等了好久好久，雪停了盖上厚厚一层，我选择了一块最安静、最平坦、看起来最好最完美的空地，毫不犹豫地写下了我的名字。（当我转身要回屋时，突然想起曾和你约定，不舍得这块空地又不想毁约，犹犹豫豫嘟了嘟嘴，另寻了一个空地，写上你的名字，呐，不欠你了。）</span>
+<span>143,我倚靠在窗边的桌上，随心所欲往外面瞧，眼里有如收走大千世界斑驳绽放五彩的晚霞、有如草地上穿着白t的男孩扭捏着手指不敢去看红了脸的女孩、有如椅子上抱着孩子指着树梢的鸟眉眼温和的女人……我脑海突然闪过无数个美好温和的黄昏，又想起令我不禁傻笑的各种经历与人，眼里无不是我曾小心翼翼拾起的美好片段，唯有你，不曾出现。</span>
+<span>144,无论如何，我一定要去试试，就是不能证明我可以，那也有证明我不可以。</span>
+<span>145,别去劝说那些前路一片黑暗却仍然执着前进的人，你真以为他们是瞎子吗？</span>
+<span>146,图书馆是墓地唯一的竞争对手。</span>
+<span>147,我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。</span>
+<span>148,忠厚老实人的恶毒，像饭里的砂砾或者出骨鱼片里未净的刺，会给人一种不期待的伤痛。----《围城》</span>
+<span>149,天下只有两种人 · 比如一串葡萄到手，</span>
+<span>一种人挑最好的先吃，另一种人把最好</span>
+<span>的留到最后吃 · 照例第一种人应该乐</span>
+<span>观’因为他每吃一颗都是吃剩的葡萄里</span>
+<span>最好的；第二种人应该悲观 · 因为他每</span>
+<span>吃一颗都是吃剩的葡萄里最坏的 · 不过</span>
+<span>事实却适得其反’缘故是第二种人还有</span>
+<span>希望，第一种人只有回忆 · </span>
+<span>150,我失去了一只臂膀 / 就睁开了一只眼睛。”</span>
+<span>这是顾城8岁时写的诗作《杨树》。</span>
+<span>151,“有时候人与人的缘分，一辈子可能也只是一站地铁或是一顿饭，上一秒是巧合，下一秒就是错过，但错过了这辈子就再也见不到了。人无法决定为谁动心，所以难得巧合。”</span>
+<span>152,有人一看书就卖弄。多看几遍再卖弄吧——多看几遍就不卖弄了。</span>
+<span>153,迷路，并无小路大路长路短路之区别。不能说在大路长路上就不是迷路了。走在达不到目的的路上，就是迷路。</span>
+<span>154,自由固不是钱所能买到的，但能够为钱而卖掉。</span>
+<span>155,灯把黑夜烫了一个洞。</span>
+<span>156,托身白刃里，杀人红尘中。</span>
+<span>157,一箫一剑平生意，负尽狂名十五年。</span>
+</p><p>
+<span> </span></p></div>
+</body>
+</html>

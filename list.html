@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<link rel="icon" type="image/x-icon" href="images/图标.ico">
 <meta charset="gb2312">
 <title>知书达理</title>
+<link rel="icon" type="image/x-icon" href="images/图标.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/base.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
@@ -29,7 +29,7 @@ window.onload = function ()
 <body>
 <header>
   <div class="tophead">
-    <div class="logo"><a href="/">北极光。个人博客</a></div>
+    <div class="logo"><a href="/">杨青个人博客</a></div>
     <div id="mnav">
       <h2><span class="navicon"></span></h2>
       <ul>
@@ -51,32 +51,10 @@ window.onload = function ()
     </nav>
   </div>
 </header>
-<div class="picshow">
-  <ul>
-    <li><i><img src="images/b01.jpg"></i>
-      <div class="font">
-      </div>
-      </a></li>
-    <li><i><img src="images/b02.jpg"></i>
-      <div class="font">
-      </div>
-      </a></li>
-    <li><i><img src="images/ab03.jpg"></i>
-      <div class="font">
-      </div>
-      </a></li>
-    <li><i><img src="images/ab04.jpg"></i>
-      <div class="font">
-      </div>
-      </a></li>
-    <li><i><img src="images/ab05.jpg"></i>
-      <div class="font">
-      </div>
-      </a></li>
-  </ul>
-</div>
 <article>
+  <h1 class="t_nav"><span>知书达理，温文尔雅，知性感性 </span><a href="index.html" class="n1">网站首页</a><a href="list.html" class="n2">学无止境</a></h1>
   <div class="blogs">
+    <div class="mt20"></div>
     <li> <span class="blogpic"><a href="/"><img src="images/text02.jpg"></a></span>
       <h3 class="blogtitle"><a href="https://blog.csdn.net/nntcdhl/article/details/89359087">CDH搭建</a></h3>
       <div class="bloginfo">
@@ -85,7 +63,7 @@ window.onload = function ()
       <div class="autor"><span class="lm"><a href="/" title="Hadoop" target="_blank" class="classname">Hadoop</a></span><span class="dtime">2019-05-21</span><span class="viewnum">浏览（<a href="/">0</a>）</span><span class="readmore"><a href="https://blog.csdn.net/nntcdhl/article/details/89359087">阅读原文</a></span></div>
     </li>
     <li> <span class="blogpic"><a href="/"><img src="images/text01.jpg"></a></span>
-      <h3 class="blogtitle"><a href="https://blog.csdn.net/nntcdhl/article/details/103099690">File文件过滤器</a></h3>
+      <h3 class="blogtitle"><a href="https://blog.csdn.net/nntcdhl/article/details/103099690">>File文件过滤器</a></h3>
       <div class="bloginfo">
         <p>用java实现对文件的过滤，遍历目录的时候，可以根据需要,只查找满足条件的文件</p>
       </div>
@@ -96,7 +74,7 @@ window.onload = function ()
       <div class="bloginfo">
         <p>输入以下命令进入MySQL控制台（假设你已经装好了MySQL或MariaDB）。mysql -u root -pmysql会提示你输入密码，输入安装配置MySQL服务时设置的密码即可。</p>
       </div>
-      <div class="autor"><span class="lm"><a href="/" title="SQl" target="_blank" class="classname">SQL</a></span><span class="dtime">2019-11-16</span><span class="viewnum">浏览（<a href="https://blog.csdn.net/nntcdhl/article/details/103100447">0</a>）</span><span class="readmore"><a href="https://blog.csdn.net/nntcdhl/article/details/103100447">阅读原文</a></span></div>
+      <div class="autor"><span class="lm"><a href="/" title="SQL" target="_blank" class="classname">SQL</a></span><span class="dtime">2018-05-04</span><span class="viewnum">浏览（<a href="https://blog.csdn.net/nntcdhl/article/details/103100447">0</a>）</span><span class="readmore"><a href="https://blog.csdn.net/nntcdhl/article/details/103100447">阅读原文</a></span></div>
     </li>
     <li> <span class="blogpic"><a href="/"><img src="images/zd01.jpg"></a></span>
       <h3 class="blogtitle"><a href="/">网页中图片属性固定宽度，如何用js改变大小</a></h3>
@@ -156,12 +134,6 @@ window.onload = function ()
     </li>
   </div>
   <div class="sidebar">
-    <div class="about">
-      <div class="avatar"> <img src="images/avatar.jpg" alt=""> </div>
-      <p class="abname">NAME | 北极光。</p>
-      <p class="abposition">二次元技术宅</p>
-      <div class="abtext"> 一个喜欢搞一些花里胡哨的技术five，喜欢二次元纸片人，爱读书，更爱美食，希望可以认识更多有趣的人 </div>
-    </div>
     <div class="search">
       <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
         <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
@@ -171,10 +143,24 @@ window.onload = function ()
         <input name="Submit" class="input_submit" value="搜索" type="submit">
       </form>
     </div>
+    <div class="lmnav">
+      <h2 class="hometitle">栏目导航</h2>
+      <ul class="navbor">
+        <li><a href="#">关于我</a></li>
+        <li><a href="list.html">学无止境</a>
+          <ul>
+            <li><a href="list.html">学习笔记</a></li>
+            <li><a href="#">HTML5+CSS3</a></li>
+            <li><a href="#">网站建设</a></li>
+          </ul>
+        </li>
+        <li><a href="#">慢生活</a></li>
+      </ul>
+    </div>
     <div class="cloud">
       <h2 class="hometitle">标签云</h2>
       <ul>
-        <a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin">HADOOP</a> <a href="https://baike.baidu.com/item/%E4%BA%8C%E6%AC%A1%E5%85%83/85064?fr=aladdin">二次元</a><a href="https://baike.baidu.com/item/%E4%B8%80%E5%8A%A0%E7%A7%91%E6%8A%80?fromtitle=%E4%B8%80%E5%8A%A0&fromid=20819739">一加</a><a href="https://baike.baidu.com/item/%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91/1070">村上春树</a> <a href="https://baike.baidu.com/item/%E7%8E%8B%E5%B0%8F%E6%B3%A2/6673">王小波</a> <a href="https://baike.baidu.com/item/IG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8/6334894?fromtitle=IG&fromid=73517">IG</a> 
+		<a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin">HADOOP</a> <a href="https://baike.baidu.com/item/%E4%BA%8C%E6%AC%A1%E5%85%83/85064?fr=aladdin">二次元</a><a href="https://baike.baidu.com/item/%E4%B8%80%E5%8A%A0%E7%A7%91%E6%8A%80?fromtitle=%E4%B8%80%E5%8A%A0&fromid=20819739">一加</a><a href="https://baike.baidu.com/item/%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91/1070">村上春树</a> <a href="https://baike.baidu.com/item/%E7%8E%8B%E5%B0%8F%E6%B3%A2/6673">王小波</a> <a href="https://baike.baidu.com/item/IG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8/6334894?fromtitle=IG&fromid=73517">IG</a> 
       </ul>
     </div>
     <div class="paihang">
@@ -203,24 +189,16 @@ window.onload = function ()
         </li>
       </ul>
     </div>
-    <div class="links">
-      <h2 class="hometitle">友情链接</h2>
-      <ul>
-        <li><a href="https://space.bilibili.com/84061778?spm_id_from=333.334.b_62696c692d6865616465722d6d.9" title="北极光。的b站账号">北极光。的b站账号</a></li>
-        <li><a href="https://me.csdn.net/nntcdhl" title="北极光。的CSDN博客">北极光。的CSDN博客</a></li>
-      </ul>
-    </div>
     <div class="weixin">
-      <h2 class="hometitle">个人微信</h2>
+      <h2 class="hometitle">官方微信</h2>
       <ul>
         <img src="images/wx.jpg">
       </ul>
     </div>
   </div>
 </article>
-<div class="blank"></div>
 <footer>
-  <p>欢迎来到北极光。的个人博客<</p>
+  <p>欢迎来到北极光。的个人博客</p>
 </footer>
 <script src="js/nav.js"></script>
 </body>

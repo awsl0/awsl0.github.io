@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+.ty-preferences .window-content { background-color: rgb(250, 250, 250); }
+.ty-preferences .nav-group-item.active { color: white; background: rgb(153, 153, 153); }
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p><span> 魏忠贤若在，大明不可亡？</span>
+<span>今天正说魏忠贤。</span>
+<span>魏忠贤，明末著名宦官，权倾朝野，号称“九千九百岁”。迫害无度，玩弄权术，架空帝王。</span>
+<span>这个人被钉在耻辱柱上几百年，在清朝的小说和诗句中，都能看出魏忠贤的罪过。</span>
+<span>“熹庙复宠魏忠贤，烈火毒燄熏高天。醴交势合走东厂，东林善类坑炎烟。</span>
+<span> 磔死何足蔽毫末，铜驼石马高硉矹。粪壤壮丽侔桥陵，名胜何辜遭污蔑。”</span>
+<span>甚至到建国初年，人们对他的评价依旧如此。但在近些年，魏忠贤突然被披上了能臣的衣服，让人看起来他有种曹操的感觉。</span>
+<span>的确，他死亡后，出现了明末惊天变局，但这和他的死亡有关系吗？</span>
+<span>首先提到最多的就是钱。</span>
+<span>关于税收</span>
+<span>提到明末，不得不提的就是钱，的确，崇祯一朝都为了钱而发愁，农民起义是因为加赋税，军队哗变是因为没军饷。但这一切，都不是魏忠贤死了的缘故，反而，是魏忠贤导致了明末入不敷出。</span>
+<span>有人讲魏忠贤征收商业税，触动了东林党人的利益，到了东林党人执政时期，商业税不在收取，反倒是农业税增加。</span>
+<span>我不清楚讲这句话的人是怎么想的，各种史料均未记载魏忠贤收取商业税。</span>
+<span>天启元年，魏忠贤登上历史舞台，此时他羽翼未丰，而东林党借助“移宫”把声势到达了顶峰，此时依然还是东林党主政，而到了天启四年，魏忠贤杖杀杨涟，阉党才掌握户部。也就是此时，他掌握了税收。</span>
+<span>而这之后他做了什么呢？</span>
+<span>天启六年，下令“边口各商贸易良苦，各口税银既不系正供，著尽行赦免，以彰朝廷恤商德意”。天启六年是魏忠贤执政时期。</span>
+<span>天启七年，浙江直隶等处商人以及药王庙商税蒙厂臣奏免。（厂臣既指魏忠贤）。</span>
+<span>天启七年，免潼关，咸阳商税。</span>
+<span>以上三点，证明了魏忠贤执政后免除了东林党人立下的商税。而且魏忠贤执政后做的不光这些。</span>
+<span>1，增收盐课，盐是专卖品，这样做只会给民众带来负担，造成私盐泛滥。而这个钱都用来中饱私囊。</span>
+<span>2，铸造劣质铜钱牟取私利，这样做的危害想必我不用多讲。</span>
+<span>3，大肆诬告商人，抄家产来中饱私囊，其中最著名的是诬告徽商，这个钱他没用在自己身上，但也没用在国家上，而是给天启皇帝修宫殿了。足足有500多万两白银，抵得上一年的辽饷。</span>
+<span>4，卖京城骑马特权，这个到没什么，但是这是用国家的权利充他个人的腰包。</span>
+<span>5，征收库银，这个就是十恶不赦之罪，库银指的是各地的府库之银，这就基本让地方无活路可走，无发展可言。</span>
+<span>总而言之，魏忠贤绝对没有征收商税，更没有利于国家。</span>
+<span>至于有人说魏忠贤给崇祯内库留了4000万两白银，才让崇祯撑了17年。</span>
+<span>各位，造谣不要成本的吗？如果谁这样说，你把证据拿出来我看看，我且不说4000万两是多大的数字，我就问一下整个崇祯在位的十多年，有一年不缺钱嘛？</span>
+<span>有人又说，天启年间魏忠贤执政，没有缺过钱，边关没有大问题，到了崇祯年间，缺钱不说，边关失利，导致明朝的防线已经退到了山海关。</span>
+<span>为什么崇祯朝缺钱？</span>
+<span>《明代九边军费考》记载，天启六年，七年，九边欠军饷高达七成，什么意思？我举个例子，600万是当时天启年间辽东一年的军费，他魏忠贤执政时欠了七成的两年九边军费，这是何等的数字，这个钱，终其崇祯一朝都没还完，那么，天启朝没钱么？</span>
+<span>当然不是，辽东战役最是费钱，而天启年间，辽饷一年可征九厘，共500余万。包括各种其余税收和正常税收。天启年间是不缺钱的，但就是欠了军饷，这些钱不是进了他魏忠贤的腰包就是他魏忠贤拿着钱带着天启皇帝吃喝玩乐了。</span>
+<span>再讲辽东战役，天启年间对清战争还占优势，但原因如下。</span>
+<span>1，清朝并未整合完毕，实力还没有完全崛起，万历年间的失利完全是因为指挥不当造成。可以看崇祯初期辽东局势还是平分秋色。</span>
+<span>2，国内相对稳定，这个稳定指的是比崇祯后期要稳定，因为这个时候国家不是很缺钱，所以农民起义不是很疯狂，明朝军队不缺饷，军队士气也不错。</span>
+<span>综上所述，魏忠贤的确不是能臣，也不是良臣，更不是纯臣，我相信如果天启不死那么早，崇祯不做皇帝，他魏忠贤就是第二个赵高。</span>
+<span>魏忠贤原本是一个赌徒，他和一般的宦官不同，一般的都是很小就阉割进宫的，而魏忠贤是已经成家生子之后，他赌输了钱，所以卖妻卖子，最后又废了一番周折才进了宫。</span>
+<span>此后他一直默默无闻，如果他52岁就死了，这个人不会出现在历史的舞台之上，因为在他前52年，只是一个平凡的不能在平凡的宦官罢了。</span>
+<span>可是世事难料，泰昌元年，明神，光二宗接连病逝，年仅十六岁的优秀建筑师明熹宗朱由校即位，此时的魏忠贤一步登天。</span>
+<span>也就是此时开始，魏忠贤开始了他人生中最辉煌的七年。</span>
+<span>那么和魏忠贤作对的东林党人是什么人呢？</span>
+<span>东林人士是以东林学院为代表的知识青年，他们以“修身齐家治国平天下”为己任，对时局抨击，要求事事奉公，开放言路。</span>
+<span>东林党是以魏忠贤为首的集团对其的蔑称。其实东林人士是一群文化素养极高，号称大明王朝的“脊梁”，我不排除他们中间有个别小人。但多数是实心救国，抨击时局的正直之人。正如东林领袖顾宪成所说的“风声，雨声，读书声，声声入耳，家事，国事，天下事，事事关心”。</span>
+<span>有人说东林人士空谈误国，这是空话，东林人有杨涟，因为直言敢谏，被魏忠贤迫害致死。有左光斗，李三才，赵南星等一批爱国志士。</span>
+<span>有人说东林人士站在道德上抵制皇帝的思想，导致崇祯议和，迁都的想法破灭。</span>
+<span>首先，我有一篇帖子提到了这点，崇祯对于议和，迁都是摇摆不定的，他不想在两线作战，所以要议和，但他不想自己讲出来，他不愿后人在史书上说他放弃祖宗的江山。</span>
+<span>再讲迁都，这个的确是对的，在明末时期，迁都无疑是正确的选择，东林人士对此表示出了异议，但这里面有三个原因，第一，孙传庭的潼关防线并未失守，京师暂时安全。当年唐朝安史之乱时，哥舒翰也曾在潼关之前据守敌军。第二，思想，明朝的于谦面对大军围城也并未放弃都城。因为放弃了都城就等于放弃了祖宗在这建设的一切，更重要的是明十二帝皇陵皆在于此。第三，崇祯的不坚定，和议和一样，崇祯在迁都问题上依旧摇摆不定。</span>
+<span>魏忠贤与东林人士绝对没有可比性，前者是玩弄权术祸国殃民的宦官，后者是一心为国铁骨铮铮的文人。</span>
+<span>还是那句话，我不否认东林人士也有卖国之人，但多是忠义之辈。</span>
+<span>最后，给大家看一下被魏忠贤陷害的杨涟在狱中写的血书。</span>
+<span>“涟今死杖下矣！痴心报主，愚直仇人，久拼七尺，不复挂念。不为张俭逃亡，亦不为杨震仰药，欲以性命归之朝廷，不图妻子一环泣耳。</span>
+<span>雷霆雨露，莫非天恩，仁义一生，死于诏狱，难言不得死所。何憾于天？何怨于人？</span>
+<span>惟我身副宪臣，曾受顾命。终可以见先帝于在天，对二祖十宗与皇天后土，天下万世矣。大笑，大笑，还大笑！刀砍东风，于我何有哉？ </span></p></div>
+</body>
+</html>
